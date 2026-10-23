@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraciencia - Material Didáctico Científico Inclusivo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL (NAVBAR SUPERIOR) -->
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo-circle-container" onclick="showSection('inicio')" style="cursor: pointer;" title="Ir al Inicio">
+                <img src="Personajes/Logo isotipo-icono.png" alt="Terraciencia Logo" class="logo-img"
+                    onerror="this.style.display='none';">
+            </div>
+            <div class="logo-texto" onclick="showSection('inicio')" style="cursor: pointer;" title="Ir al Inicio">
+                <h1>TERRACIENCIA</h1>
+                <p class="tagline">CIENCIA INCLUSIVA Y DIDÁCTICA</p>
+            </div>
+            <!-- REDES SOCIALES E IDENTIDAD: ICONOS DESTACADOS DE 40PX JUNTO AL LOGO -->
+            <div class="social-icons-wrapper brand-socials">
+                <a href="https://www.facebook.com/share/1GKrY1eMVA/" target="_blank" rel="noopener noreferrer" class="social-icon-btn fb-icon"
+                    title="Visítanos en Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/terraciencia.gt?igsh=aml4N3FscHM3Mzlx" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-btn ig-icon" title="Síguenos en Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.pinterest.com/Cienciainclusiva/" target="_blank" rel="noopener noreferrer" class="social-icon-btn pin-icon"
+                    title="Síguenos en Pinterest">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.546.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:terraciencia0@gmail.com" class="social-icon-btn email-icon"
+                    title="Escríbenos a terraciencia0@gmail.com">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+            <nav class="main-nav">
+                <a href="#inicio" class="nav-link active" id="nav-inicio" onclick="showSection('inicio', event)">Inicio</a>
+                <a href="#materiales" class="nav-link nav-link-materiales" id="nav-materiales" onclick="showSection('materiales', event)">
+                    Materiales Didácticos <span class="badge-proximamente">PRÓXIMAMENTE</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- VISTA PRINCIPAL: SECCIÓN DE INICIO (LANDING PAGE) -->
+    <div id="view-inicio" class="view-section active">
+        <!-- HERO REDISEÑADO: Textos oficiales, claridad cognitiva y CTA principal -->
+        <section class="hero-section">
+            <div class="hero-content animate-on-scroll">
+                <h2>Material educativo estructurado para facilitar el aprendizaje de las ciencias</h2>
+                <p>Diseñamos recursos visuales, cuadernos prácticos y guías adaptadas que ayudan a organizar la información, respetan diferentes ritmos de aprendizaje y hacen que la ciencia sea fácil de comprender para todos.</p>
+                <div class="hero-cta-wrapper">
+                    <button class="btn-cta-explore" onclick="showSection('materiales')">
+                        ✨ Catálogo Disponible Próximamente
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: METODOLOGÍA ADAPTADA -->
+        <section class="metodologia-seccion animate-on-scroll" id="metodologia-seccion">
+            <div class="metodologia-header animate-on-scroll">
+                <span class="metodologia-badge-pill">🧠 FUNDAMENTACIÓN DIDÁCTICA</span>
+                <h2 class="metodologia-titulo">Metodología Adaptada</h2>
+                <p class="metodologia-subtitulo">
+                    Principios pedagógicos estructurados para garantizar el acceso equitativo al conocimiento científico y favorecer la autonomía en el aula.
+                </p>
+            </div>
+
+            <div class="metodologia-grid">
+                <!-- Tarjeta 1: Aprender Visualmente -->
+                <div class="metodologia-card card-visual aprender-visual animate-on-scroll" data-delay="100">
+                    <div class="metodologia-icon-circle icon-box icon-container icon-circle-cyan">
+                        <svg class="metodologia-svg-icon icon-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="metodologia-card-title">Aprender Visualmente</h3>
+                    <p class="metodologia-card-desc">
+                        Contenidos organizados con apoyo visual que facilita la comprensión y evita la sobrecarga de información.
+                    </p>
+                    <div class="metodologia-card-indicator indicator-cyan"></div>
+                </div>
+
+                <!-- Tarjeta 2: Paso a Paso -->
+                <div class="metodologia-card card-paso paso-a-paso animate-on-scroll" data-delay="200">
+                    <div class="metodologia-icon-circle icon-box icon-container icon-circle-orange">
+                        <svg class="metodologia-svg-icon icon-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="metodologia-card-title">Paso a Paso</h3>
+                    <p class="metodologia-card-desc">
+                        Estructuras claras que acompañan progresivamente desde la primera lectura hasta la práctica independiente.
+                    </p>
+                    <div class="metodologia-card-indicator indicator-orange"></div>
+                </div>
+
+                <!-- Tarjeta 3: Inclusión Real -->
+                <div class="metodologia-card card-inclusion inclusion-real animate-on-scroll" data-delay="300">
+                    <div class="metodologia-icon-circle icon-box icon-container icon-circle-green">
+                        <svg class="metodologia-svg-icon icon-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 11h2a2 2 0 0 1 2 2 2 2 0 0 1-2 2H4v5a2 2 0 0 0 2 2h5v-2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h5a2 2 0 0 0 2-2v-5h-2a2 2 0 0 1-2-2 2 2 0 0 1 2-2h2V6a2 2 0 0 0-2-2h-5V2a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2H6a2 2 0 0 0-2 2v5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="metodologia-card-title">Inclusión Real</h3>
+                    <p class="metodologia-card-desc">
+                        Recursos pensados para la neurodiversidad, adaptados para su uso directo con todo el grupo o de forma individual.
+                    </p>
+                    <div class="metodologia-card-indicator indicator-green"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN INTERACTIVA: MASCOTAS NOOSFÉRICAS -->
+        <section class="guias-seccion animate-on-scroll" id="guias-aprendizaje">
+            <div class="guias-header animate-on-scroll">
+                <span class="guias-badge-pill">🌌 EL UNIVERSO DE TERRACIENCIA</span>
+                <h2 class="guias-titulo">Mascotas Noosféricas</h2>
+                <p class="guias-subtitulo">
+                    Pequeños compañeros de aventura que acompañan las actividades y ayudan a mantener la atención durante el aprendizaje.
+                </p>
+            </div>
+
+            <div class="guias-grid">
+                <!-- Tarjeta 1: NOVA -->
+                <article class="guia-card guia-nova mascota-card character-card animate-on-scroll" data-delay="100">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Nova.png" alt="Nova, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">NOVA</span>
+                            <span class="guia-origen-pill">🪐 Prisma</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Una pequeña estrella navegante de anillos brillantes, creada en Prisma."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2: HELIX -->
+                <article class="guia-card guia-helix mascota-card character-card animate-on-scroll" data-delay="200">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Helix.png" alt="Helix, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">HELIX</span>
+                            <span class="guia-origen-pill">🧬 Vitalia</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Una célula celeste llena de ternura y ADN luminoso, creada en Vitalia."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3: NANO -->
+                <article class="guia-card guia-nano mascota-card character-card animate-on-scroll" data-delay="300">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Nano.png" alt="Nano, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">NANO</span>
+                            <span class="guia-origen-pill">🪐 Titan-Q</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Una cápsula esférica de exploración indestructible, proveniente del planeta Titan-Q."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4: BITY -->
+                <article class="guia-card guia-bity mascota-card character-card animate-on-scroll" data-delay="400">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Bity.png" alt="Bity, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">BITY</span>
+                            <span class="guia-origen-pill">🤖 Cíberon</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Un microchip alegre sobre ruedas todoterreno, creado en Cíberon."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 5: LEAF -->
+                <article class="guia-card guia-leaf mascota-card character-card animate-on-scroll" data-delay="500">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Leaf.png" alt="Leaf, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">LEAF</span>
+                            <span class="guia-origen-pill">🌱 Simbios</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Una semilla viva que hace florecer brotes a su paso, proveniente del planeta Simbios."
+                        </blockquote>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 6: DATA -->
+                <article class="guia-card guia-data mascota-card character-card animate-on-scroll" data-delay="600">
+                    <div class="guia-card-glow"></div>
+                    <div class="guia-avatar-wrapper">
+                        <img src="Personajes/Data.png" alt="Data, guía de Terraciencia" class="guia-avatar-img">
+                    </div>
+                    <div class="guia-card-content">
+                        <div class="guia-badge-row">
+                            <span class="guia-nombre-pill">DATA</span>
+                            <span class="guia-origen-pill">⚡ Kinetos</span>
+                        </div>
+                        <blockquote class="guia-lore">
+                            "Una matriz cúbica interactiva con una sonrisa de luz, proveniente del planeta Kinetos."
+                        </blockquote>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- VISTA SECUNDARIA: SECCIÓN DE EXPECTATIVA DE MATERIALES DIDÁCTICOS -->
+    <div id="view-materiales" class="view-section">
+        <main class="catalogo-seccion">
+            <!-- TARJETA DE PRESENTACIÓN / EXPECTATIVA PEDAGÓGICA -->
+            <div class="tarjeta-expectativa-pedagogica">
+                <div class="expectativa-badge-top">
+                    <span class="neon-pill-label">✨ PRÓXIMO LANZAMIENTO OFICIAL</span>
+                </div>
+
+                <h3 class="expectativa-titulo">
+                    ¡Estamos preparando algo increíble para la inclusión cognitiva!
+                </h3>
+
+                <p class="expectativa-texto-pedagogico">
+                    Muy pronto podrás explorar y acceder a nuestros <strong>Cuadernos de Actividades</strong>, <strong>Guías Pedagógicas</strong>, <strong>Material para el Aula</strong> y <strong>Fichas de Trabajo</strong>. Todos diseñados con secuencias estructuradas y andamiajes visuales permanentes.
+                </p>
+
+                <!-- GRID DE LAS 4 LÍNEAS DE MATERIALES DIDÁCTICOS -->
+                <div class="expectativa-categorias-grid">
+                    <div class="categoria-preview-card card-cuadernos">
+                        <div class="categoria-icon">🖍️</div>
+                        <h4>Cuadernos de Actividades</h4>
+                        <p>Ejercicios prácticos, dibujo y coloreado adaptados para reforzar conceptos científicos de forma entretenida y sin frustración.</p>
+                        <span class="cat-pill">Próximamente</span>
+                    </div>
+
+                    <div class="categoria-preview-card card-guias">
+                        <div class="categoria-icon">📘</div>
+                        <h4>Guías Pedagógicas</h4>
+                        <p>Estrategias claras y orientaciones sencillas para docentes y familias que buscan acompañar el aprendizaje paso a paso.</p>
+                        <span class="cat-pill">Próximamente</span>
+                    </div>
+
+                    <div class="categoria-preview-card card-decorativo">
+                        <div class="categoria-icon">🎨</div>
+                        <h4>Material para el Aula</h4>
+                        <p>Láminas, posters e imágenes educativas para ambientar el espacio de trabajo y tener las ideas principales siempre a la vista.</p>
+                        <span class="cat-pill">Próximamente</span>
+                    </div>
+
+                    <div class="categoria-preview-card card-hojas">
+                        <div class="categoria-icon">📄</div>
+                        <h4>Fichas de Trabajo</h4>
+                        <p>Actividades individuales listas para imprimir, pensadas para que cada estudiante repase a su propio ritmo.</p>
+                        <span class="cat-pill">Próximamente</span>
+                    </div>
+                </div>
+
+                <!-- LLAMADO A REDES SOCIALES -->
+                <div class="expectativa-redes-box">
+                    <p class="expectativa-redes-aviso">
+                        📌 <strong>Síguenos en nuestras redes sociales</strong> para enterarte antes que nadie del lanzamiento oficial.
+                    </p>
+                    <div class="expectativa-social-links">
+                        <a href="https://www.facebook.com/share/1GKrY1eMVA/" target="_blank" rel="noopener noreferrer" class="btn-social-cta cta-facebook" title="Síguenos en Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/terraciencia.gt?igsh=aml4N3FscHM3Mzlx" target="_blank" rel="noopener noreferrer" class="btn-social-cta cta-instagram" title="Síguenos en Instagram">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.pinterest.com/Cienciainclusiva/" target="_blank" rel="noopener noreferrer" class="btn-social-cta cta-pinterest" title="Síguenos en Pinterest">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.546.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"></path>
+                            </svg>
+                            <span>Pinterest</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATÁLOGO ACTIVO TEMPORALMENTE OCULTO (CONSERVADO INTACTO PARA REACTIVACIÓN EN LANZAMIENTO OFICIAL) -->
+            <div id="catalogo-activo-oculto" style="display: none;" aria-hidden="true">
+            <div class="seccion-header">
+                <h3>CATÁLOGO DE MATERIAL DIDÁCTICO PARA EL APRENDIZAJE INCLUSIVO</h3>
+                <p class="seccion-descripcion">
+                    Accede a nuestros exclusivos materiales descargables en formato PDF, meticulosamente diseñados para
+                    ofrecer alta claridad cognitiva.
+                    Cada recurso incluye andamiajes visuales permanentes y una secuencia estructurada de tres fases: "Yo
+                    Hago" (Modelado Cognitivo),
+                    "Nosotros Hacemos" (Práctica Guiada) y "Tú Haces" (Práctica Independiente). Ideal para docentes que
+                    buscan herramientas inclusivas
+                    eficaces y para el desarrollo del pensamiento científico autónomo. ¡Potencia el aprendizaje hoy mismo!
+                </p>
+            </div>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-cuadernos')">🖍️ Cuadernos de Actividades</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-guias')">📘 Guías Pedagógicas</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-decorativo')">🎨 Material Decorativo para el Aula</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-hojas')">📄 Hojas de Trabajo</button>
+            </div>
+
+        <!-- PESTAÑA 1: CUADERNOS DE ACTIVIDADES -->
+        <div id="tab-cuadernos" class="tab-content active">
+            <div class="products-grid">
+                <!-- Libro 1: Biomas de Guatemala Vol. 1 -->
+                <div class="product-card prod-verde" onclick="openProductInfoModal('libro-biomas-guatemala')">
+                    <div class="product-thumb">
+                        <img src="Imágenes/Biomas de Guatemala Vol.1 - portada.png"
+                            alt="Portada Biomas de Guatemala Vol. 1" class="thumb-cover-img">
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-08-17">¡NUEVO!</div>
+                        <h4 class="product-title">"BIOMAS DE GUATEMALA VOL. 1"</h4>
+                        <p class="product-desc">¡Descubre la Megadiversidad! Introduce la riqueza ecológica y
+                            territorial de los ecosistemas guatemaltecos mediante actividades de coloreado estructurado.
+                        </p>
+                        <div class="product-meta" onclick="event.stopPropagation();">
+                            <span class="product-price">Q45.00</span>
+                            <button class="btn-add-cart"
+                                onclick="addToCart('Libro: BIOMAS DE GUATEMALA VOL. 1', 45.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Libro 2: Animales Marinos Vol. 1 -->
+                <div class="product-card prod-cian" onclick="openProductInfoModal('libro-animales-marinos')">
+                    <div class="product-thumb">
+                        <img src="Imágenes/Animales marinos Vol.1 - portada.png" alt="Portada Animales Marinos Vol. 1"
+                            class="thumb-cover-img">
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-08-17">¡NUEVO!</div>
+                        <h4 class="product-title">"ANIMALES MARINOS VOL. 1"</h4>
+                        <p class="product-desc">¡Explora la Vida Oceánica! Combina la exploración zoológica marina con
+                            el desarrollo de la concentración y habilidades visuomotoras.</p>
+                        <div class="product-meta" onclick="event.stopPropagation();">
+                            <span class="product-price">Q45.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('Libro: ANIMALES MARINOS VOL. 1', 45.00)">+
+                                Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Libro: Une Puntos y Colorea -->
+                <div class="product-card prod-naranja" onclick="openProductInfoModal('libro-une-puntos')">
+                    <div class="product-thumb">
+                        <img src="Imágenes/Une puntos - Portada.png" alt="Portada Une Puntos" class="thumb-cover-img">
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-07-02">¡NUEVO!</div>
+                        <h4 class="product-title">LIBRO INTERACTIVO: "Une Puntos y Colorea"</h4>
+                        <p class="product-desc">Actividades divertidas para niños orientadas al desarrollo cognitivo,
+                            motricidad fina y expresión artística con fundamentos pedagógicos sólidos.</p>
+                        <div class="product-meta" onclick="event.stopPropagation();">
+                            <span class="product-price">Q45.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('Libro: UNE PUNTOS Y COLOREA', 45.00)">+
+                                Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: GUÍAS PEDAGÓGICAS -->
+        <div id="tab-guias" class="tab-content">
+            <div class="products-grid">
+                <div class="product-card prod-verde">
+                    <div class="product-thumb">
+                        🚢
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">GUÍA DIDÁCTICA: Por qué flotan los barcos</h4>
+                        <p class="product-desc">Descubre el principio de flotabilidad con infografías de modelado
+                            cognitivo y plantillas listas para imprimir en el aula.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('GUÍA: Por qué flotan los barcos', 35.00)">+
+                                Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-cian">
+                    <div class="product-thumb">
+                        🌱
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">GUÍA DIDÁCTICA: Respiración de las Plantas</h4>
+                        <p class="product-desc">Fichas técnicas con andamiajes visuales permanentes diseñadas
+                            especialmente para estudiantes con diversidad cognitiva.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart"
+                                onclick="addToCart('GUÍA: Respiración de las Plantas', 35.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-morado">
+                    <div class="product-thumb">
+                        🧠
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">GUÍA DIDÁCTICA: "Yo Hago, Nosotros Hacemos"</h4>
+                        <p class="product-desc">Guía metodológica para docentes que explica el paso a paso del modelado
+                            cognitivo aplicado a las ciencias naturales.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('GUÍA: Modelado Yo Hago', 35.00)">+
+                                Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-magenta">
+                    <div class="product-thumb">
+                        🔬
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">GUÍA DIDÁCTICA: Historias de Ciencia</h4>
+                        <p class="product-desc">Biografías adaptadas con alta claridad de científicos extraordinarios
+                            con discapacidades sensoriales o cognitivas.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('GUÍA: Historias de Ciencia', 35.00)">+
+                                Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: MATERIAL DECORATIVO PARA EL AULA -->
+        <div id="tab-decorativo" class="tab-content">
+            <div class="products-grid">
+                <div class="product-card prod-morado">
+                    <div class="product-thumb">
+                        🎨
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-08-18">¡NUEVO!</div>
+                        <h4 class="product-title">POSTERS EDUCATIVOS: El Método Científico</h4>
+                        <p class="product-desc">Set de 5 posters ilustrados de alta resolución para ambientación de aula con andamiajes visuales claros.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q40.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('POSTERS: El Método Científico', 40.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-cian">
+                    <div class="product-thumb">
+                        🔤
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-08-18">¡NUEVO!</div>
+                        <h4 class="product-title">ALFABETO CIENTÍFICO VISUAL</h4>
+                        <p class="product-desc">Banners y tarjetas del abecedario temático de ciencia y naturaleza con tipografía adaptada e ilustraciones amigables.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('ALFABETO: Científico Visual', 35.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-naranja">
+                    <div class="product-thumb">
+                        🚩
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">BANNERS: Rincón de Ciencias</h4>
+                        <p class="product-desc">Kit completo de ambientación pedagógica con las mascotas de Terraciencia para delimitar zonas de aprendizaje activo.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q30.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('BANNERS: Rincón de Ciencias', 30.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-verde">
+                    <div class="product-thumb">
+                        🌿
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">MURAL INTERACTIVO: Ciclo del Agua</h4>
+                        <p class="product-desc">Recurso modular gigante para pared con piezas recortables y etiquetas en letra imprenta clara.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q35.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('MURAL: Ciclo del Agua', 35.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4: HOJAS DE TRABAJO -->
+        <div id="tab-hojas" class="tab-content">
+            <div class="products-grid">
+                <div class="product-card prod-verde">
+                    <div class="product-thumb">
+                        🔍
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-badge-new" data-fecha-publicacion="2026-08-18">¡NUEVO!</div>
+                        <h4 class="product-title">FICHAS: Partes de la Planta y Fotosíntesis</h4>
+                        <p class="product-desc">Colección de hojas de trabajo individuales con secuencias 'Yo Hago, Nosotros Hacemos, Tú Haces' listas para imprimir.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q25.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('FICHAS: Partes de la Planta', 25.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-cian">
+                    <div class="product-thumb">
+                        💧
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">FICHAS: Estados de la Materia</h4>
+                        <p class="product-desc">Ejercicios de clasificación visual y discriminación conceptual para estudiantes con diversos estilos de aprendizaje.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q25.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('FICHAS: Estados de la Materia', 25.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-naranja">
+                    <div class="product-thumb">
+                        🪐
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">FICHAS: El Sistema Solar Inclusivo</h4>
+                        <p class="product-desc">Hojas de práctica guiada con órbitas simplificadas y datos curiosos estructurados paso a paso.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q25.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('FICHAS: Sistema Solar', 25.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card prod-magenta">
+                    <div class="product-thumb">
+                        🦋
+                        <span class="pdf-badge-classic">PDF</span>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">FICHAS: Metamorfosis y Ciclos de Vida</h4>
+                        <p class="product-desc">Actividades recortables de ordenación secuencial y rotulación para el desarrollo cognitivo autónomo.</p>
+                        <div class="product-meta">
+                            <span class="product-price">Q25.00</span>
+                            <button class="btn-add-cart" onclick="addToCart('FICHAS: Ciclos de Vida', 25.00)">+ Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> <!-- Fin de catalogo-activo-oculto -->
+    </main>
+    </div>
+
+    <!-- MODAL INFORMATIVO DETALLADO (OCULTO TEMPORALMENTE) -->
+    <div class="modal-overlay" id="productInfoModal" style="display: none !important;" aria-hidden="true">
+        <div class="modal-content product-extended-modal">
+            <div class="modal-header">
+                <h3>Detalles del Recurso Didáctico</h3>
+                <button class="modal-close" onclick="closeProductInfoModal()">&times;</button>
+            </div>
+            <div class="product-extended-layout">
+                <!-- Lado Izquierdo: Portada Grande -->
+                <div class="extended-left">
+                    <img id="modalCoverImg" src="Imágenes/Biomas de Guatemala Vol.1 - portada.png" alt="Portada Libro"
+                        class="extended-cover-img">
+                </div>
+                <!-- Lado Derecho: Información, Imágenes de Referencia y Botón -->
+                <div class="extended-right">
+                    <h4 class="extended-title" id="modalTitle">"BIOMAS DE GUATEMALA VOL. 1" - ¡Descubre la
+                        Megadiversidad!</h4>
+                    <p class="extended-description" id="modalDescription">
+                        ¿Buscas conectar el aprendizaje científico con el entorno natural local? Este recurso pedagógico
+                        está diseñado para introducir la riqueza ecológica de los ecosistemas guatemaltecos mediante
+                        andamiajes visuales claros y actividades de coloreado estructurado.
+                    </p>
+
+                    <div class="extended-benefits">
+                        <h5>Beneficios Clave:</h5>
+                        <ul id="modalBenefits">
+                            <li>✓ <strong>Conciencia Ecológica y Territorial:</strong> Identificación de la flora, fauna
+                                y clima característicos de los biomas de Guatemala.</li>
+                            <li>✓ <strong>Claridad Cognitiva:</strong> Gráficos simplificados de contornos gruesos que
+                                facilitan la retención de conceptos biogeográficos.</li>
+                            <li>✓ <strong>Inclusión Educativa:</strong> Adaptable para estudiantes con diversas
+                                necesidades de procesamiento visual y aprendizaje activo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="preview-gallery-container">
+                        <h5>Muestras del interior (Pasa el cursor encima para ampliar):</h5>
+                        <div class="preview-images-grid" id="modalPreviewGrid">
+                            <div class="preview-box"><img src="Imágenes/Biomas de Guatemala Vol.1 - 1.png"
+                                    alt="Muestra 1"></div>
+                            <div class="preview-box"><img src="Imágenes/Biomas de Guatemala Vol.1 - 2.png"
+                                    alt="Muestra 2"></div>
+                            <div class="preview-box"><img src="Imágenes/Biomas de Guatemala Vol.1 - 3.png"
+                                    alt="Muestra 3"></div>
+                        </div>
+                    </div>
+
+                    <div class="extended-action-bar">
+                        <span class="extended-price" id="modalPrice">Q45.00</span>
+                        <button class="btn-extended-buy" id="modalBuyBtn" onclick="addCurrentModalToCart()">🛒 Agregar
+                            al Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DEL CARRITO (OCULTO TEMPORALMENTE) -->
+    <div class="modal-overlay" id="cartModal" style="display: none !important;" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tu Pedido Terraciencia</h3>
+                <button class="modal-close" onclick="toggleCartModal()">&times;</button>
+            </div>
+            <div class="cart-items-container" id="cartItems"></div>
+            <div class="cart-total-bar">
+                <span>Total Estimado:</span>
+                <span id="cartTotal">Q0.00</span>
+            </div>
+            <button class="btn-whatsapp-checkout" onclick="sendWhatsAppOrder()">💬 Enviar Pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE CAPTACIÓN DE CORREOS (LEAD CAPTURE) -->
+    <section class="captacion-seccion animate-on-scroll" id="captacion-boletin">
+        <div class="captacion-card">
+            <div class="captacion-glow"></div>
+            <div class="captacion-header">
+                <span class="captacion-badge-pill">COMUNIDAD Y NOVEDADES</span>
+                <h3 class="captacion-titulo">Acompaña el lanzamiento de Terraciencia</h3>
+                <p class="captacion-subtitulo">
+                    Déjanos tu correo para avisarte cuando el catálogo esté disponible y enviarte recursos gratuitos para tu aula o casa.
+                </p>
+            </div>
+
+            <form class="captacion-form" id="leadCaptureForm" action="https://formspree.io/f/mjyybdaj" method="POST" onsubmit="handleLeadCapture(event)">
+                <div class="captacion-input-wrapper">
+                    <span class="captacion-input-icon">✉️</span>
+                    <input type="email" id="leadEmailInput" name="email" class="captacion-input" placeholder="Escribe tu correo electrónico..." required autocomplete="email">
+                </div>
+                <button type="submit" class="btn-captacion-submit" id="btnLeadSubmit">
+                    <span>📩 Recibir Novedades</span>
+                </button>
+            </form>
+            <p class="captacion-feedback" id="captacionFeedback" style="display: none;"></p>
+            <p class="captacion-privacidad">
+                🔒 Prometemos no saturar tu bandeja. Solo compartiremos material educativo de valor.
+            </p>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA INSTITUCIONAL -->
+    <footer class="footer-institucional animate-on-scroll">
+        <div class="footer-container">
+            <div class="footer-brand-column">
+                <div class="footer-logo-row" onclick="showSection('inicio')" style="cursor: pointer;" title="Ir al Inicio">
+                    <img src="Personajes/Logo isotipo-icono.png" alt="Terraciencia Logo" class="footer-logo-img" onerror="this.style.display='none';">
+                    <span class="footer-brand-title">TERRACIENCIA</span>
+                </div>
+                <p class="footer-mission">
+                    Materiales educativos estructurados para facilitar el aprendizaje de las ciencias, adaptar el contenido a diferentes ritmos y hacer que el conocimiento sea accesible para todos.
+                </p>
+                <div class="footer-contact-direct">
+                    <span class="footer-contact-label">Contacto Directo:</span>
+                    <a href="mailto:terraciencia0@gmail.com" class="footer-email-link" title="Escríbenos a terraciencia0@gmail.com">
+                        <span class="footer-email-icon">✉️</span> terraciencia0@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-nav-column">
+                <h4 class="footer-heading">Navegación</h4>
+                <ul class="footer-nav-list">
+                    <li><a href="#inicio" onclick="showSection('inicio', event)">Inicio</a></li>
+                    <li><a href="#metodologia" onclick="scrollToElement('metodologia-seccion', event)">Metodología Adaptada</a></li>
+                    <li><a href="#guias-aprendizaje" onclick="scrollToGuias(event)">Nuestros Guías</a></li>
+                    <li><a href="#materiales" onclick="showSection('materiales', event)">Materiales Didácticos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social-column">
+                <h4 class="footer-heading">Comunidad y Redes</h4>
+                <p class="footer-social-sub">Síguenos para novedades, adelantos y dinámicas exclusivas:</p>
+                <div class="social-icons-wrapper footer-social-icons">
+                    <a href="https://www.facebook.com/share/1GKrY1eMVA/" target="_blank" rel="noopener noreferrer" class="social-icon-btn fb-icon" title="Visítanos en Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/terraciencia.gt?igsh=aml4N3FscHM3Mzlx" target="_blank" rel="noopener noreferrer" class="social-icon-btn ig-icon" title="Síguenos en Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.pinterest.com/Cienciainclusiva/" target="_blank" rel="noopener noreferrer" class="social-icon-btn pin-icon" title="Síguenos en Pinterest">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.546.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:terraciencia0@gmail.com" class="social-icon-btn email-icon" title="Escríbenos a terraciencia0@gmail.com">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 Terraciencia. Todos los derechos reservados.</p>
+            <p class="footer-subcopy">Materiales Didácticos de Alta Claridad para la Inclusión Educativa.</p>
+        </div>
+    </footer>
+
+    <!-- ARCHIVO JS PRINCIPAL: ANIMACIONES Y HOVER -->
+    <script src="script.js"></script>
+
+    <!-- INTERACTIVIDAD JS (NAVEGACIÓN, TABS, MODALS Y CARRITO AUTOMATIZADO) -->
+    <script>
+        let cart = [];
+        const WHATSAPP_NUMBER = "50255555555";
+        let currentModalProduct = null;
+
+        // NAVEGACIÓN ENTRE SECCIÓN DE INICIO Y MATERIALES DIDÁCTICOS
+        function showSection(sectionId, evt) {
+            if (evt) evt.preventDefault();
+
+            // Desactivar todas las vistas
+            document.querySelectorAll('.view-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            // Desactivar enlaces activos en navbar
+            document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Activar la vista solicitada
+            const targetView = document.getElementById('view-' + sectionId);
+            const targetNav = document.getElementById('nav-' + sectionId);
+
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+            if (targetNav) {
+                targetNav.classList.add('active');
+            }
+
+            // Scroll suave hacia arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Reactivar animaciones de scroll para la vista activa
+            if (typeof refreshScrollAnimations === 'function') {
+                refreshScrollAnimations();
+            }
+        }
+
+        const booksData = {
+            'libro-biomas-guatemala': {
+                title: '"BIOMAS DE GUATEMALA VOL. 1" - ¡Descubre la Megadiversidad!',
+                cartName: 'Libro: BIOMAS DE GUATEMALA VOL. 1',
+                cover: 'Imágenes/Biomas de Guatemala Vol.1 - portada.png',
+                description: '¿Buscas conectar el aprendizaje científico con el entorno natural local? Este recurso pedagógico está diseñado para introducir la riqueza ecológica de los ecosistemas guatemaltecos mediante andamiajes visuales claros y actividades de coloreado estructurado.',
+                benefits: [
+                    { title: 'Conciencia Ecológica y Territorial', desc: 'Identificación de la flora, fauna y clima característicos de los biomas de Guatemala.' },
+                    { title: 'Claridad Cognitiva', desc: 'Gráficos simplificados de contornos gruesos que facilitan la retención de conceptos biogeográficos.' },
+                    { title: 'Inclusión Educativa', desc: 'Adaptable para estudiantes con diversas necesidades de procesamiento visual y aprendizaje activo.' }
+                ],
+                samples: [
+                    'Imágenes/Biomas de Guatemala Vol.1 - 1.png',
+                    'Imágenes/Biomas de Guatemala Vol.1 - 2.png',
+                    'Imágenes/Biomas de Guatemala Vol.1 - 3.png'
+                ],
+                pdf: 'Libros para colorear/Biomas de Guatemala Vol. 1.pdf',
+                price: 45.00
+            },
+            'libro-animales-marinos': {
+                title: '"ANIMALES MARINOS VOL. 1" - ¡Explora la Vida Océanica!',
+                cartName: 'Libro: ANIMALES MARINOS VOL. 1',
+                cover: 'Imágenes/Animales marinos Vol.1 - portada.png',
+                description: '¿Deseas fomentar la curiosidad por la biodiversidad marina? Un libro didáctico enfocado en el reino acuático que combina la exploración zoológica con el desarrollo de la concentración y habilidades visuomotoras.',
+                benefits: [
+                    { title: 'Pensamiento Científico Temprano', desc: 'Clasificación visual y reconocimiento de especies del hábitat marino.' },
+                    { title: 'Coordinación Visuomotora', desc: 'Estimula la precisión motora fina y la discriminación figura-fondo mediante el coloreado.' },
+                    { title: 'Atención Sostenida', desc: 'Diseñado para mantener el enfoque y reducir la fatiga cognitiva a través de la expresión artística.' }
+                ],
+                samples: [
+                    'Imágenes/Animales marinos Vol.1 - 1.png',
+                    'Imágenes/Animales marinos Vol.1 - 2.png',
+                    'Imágenes/Animales marinos Vol.1 - 3.png'
+                ],
+                pdf: 'Libros para colorear/Animales marinos Vol.1.pdf',
+                price: 45.00
+            },
+            'libro-une-puntos': {
+                title: '"UNE PUNTOS Y COLOREA" - ¡Aprende Jugando!',
+                cartName: 'Libro: UNE PUNTOS Y COLOREA',
+                cover: 'Imágenes/Une puntos - Portada.png',
+                description: '¿Buscas una forma efectiva de estimular el desarrollo cognitivo? Basado en sólidos fundamentos pedagógicos, este libro ofrece una secuencia estructurada excelente para la inclusión y el trabajo de la motricidad fina.',
+                benefits: [
+                    { title: 'Desarrollo Cognitivo', desc: 'Reconocimiento numérico y conteo secuencial.' },
+                    { title: 'Motricidad Fina', desc: 'Fortalece la coordinación ojo-mano y precisión para la escritura.' },
+                    { title: 'Expresión Creativa', desc: 'Estimula la imaginación mediante el arte.' }
+                ],
+                samples: [
+                    'Imágenes/Une puntos - 1.png',
+                    'Imágenes/Une puntos - 2.png',
+                    'Imágenes/Une puntos - 3.png'
+                ],
+                pdf: 'Imágenes/Une puntos - Portada.png',
+                price: 45.00
+            }
+        };
+
+        function switchTab(evt, tabId) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) { tabContents[i].classList.remove("active"); }
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) { tabBtns[i].classList.remove("active"); }
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openProductInfoModal(id) {
+            const product = booksData[id];
+            if (product) {
+                currentModalProduct = product;
+                document.getElementById('modalTitle').textContent = product.title;
+                document.getElementById('modalCoverImg').src = product.cover;
+                document.getElementById('modalCoverImg').alt = product.title;
+                document.getElementById('modalDescription').textContent = product.description;
+                document.getElementById('modalPrice').textContent = `Q${product.price.toFixed(2)}`;
+
+                const benefitsList = document.getElementById('modalBenefits');
+                benefitsList.innerHTML = product.benefits.map(b => `<li>✓ <strong>${b.title}:</strong> ${b.desc}</li>`).join('');
+
+                const previewGrid = document.getElementById('modalPreviewGrid');
+                previewGrid.innerHTML = product.samples.map((src, index) => `
+                    <div class="preview-box">
+                        <img src="${src}" alt="Muestra ${index + 1}">
+                    </div>
+                `).join('');
+            }
+            document.getElementById('productInfoModal').style.display = 'flex';
+        }
+
+        function addCurrentModalToCart() {
+            if (currentModalProduct) {
+                addToCart(currentModalProduct.cartName, currentModalProduct.price);
+                closeProductInfoModal();
+            }
+        }
+
+        function closeProductInfoModal() {
+            document.getElementById('productInfoModal').style.display = 'none';
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) { existingItem.quantity += 1; }
+            else { cart.push({ name, price, quantity: 1 }); }
+            updateCartUI();
+
+            if (window.event && window.event.target) {
+                const btn = window.event.target;
+                const originalText = btn.innerText;
+                btn.innerText = "¡Añadido! ✓";
+                btn.style.backgroundColor = "#1b5e20";
+                setTimeout(() => { btn.innerText = originalText; btn.style.backgroundColor = ""; }, 800);
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (cartCount) {
+                const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+                cartCount.innerText = totalItems;
+            }
+
+            if (!cartItems || !cartTotal) return;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart-text">El carrito está vacío.</p>';
+                cartTotal.innerText = "Q0.00";
+                return;
+            }
+
+            let totalMoney = 0;
+            cartItems.innerHTML = "";
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalMoney += itemTotal;
+                cartItems.innerHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.name} (x${item.quantity})</h4>
+                            <p>Q${itemTotal.toFixed(2)}</p>
+                        </div>
+                        <button class="btn-remove" onclick="removeFromCart('${item.name}')">Eliminar</button>
+                    </div>`;
+            });
+            cartTotal.innerText = `Q${totalMoney.toFixed(2)}`;
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById('cartModal');
+            modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) { alert("Agrega algún material a tu pedido."); return; }
+            let message = "¡Hola Terraciencia! 🌟\nMe interesa adquirir el siguiente material didáctico:\n\n";
+            let total = 0;
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                message += `${index + 1}. 📄 *${item.name}* (Cant: ${item.quantity}) - Q${subtotal.toFixed(2)}\n`;
+            });
+            message += `\n💰 *Total Estimado:* Q${total.toFixed(2)}\n\nPor favor compárteme los detalles de pago.`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // CONTROL AUTOMÁTICO DE CADUCIDAD DE ETIQUETA "¡NUEVO!"
+        document.addEventListener("DOMContentLoaded", function () {
+            const DIAS_LIMITE = 15;
+            const badgesNuevos = document.querySelectorAll('.product-badge-new');
+            badgesNuevos.forEach(badge => {
+                const fechaPublicacionStr = badge.getAttribute('data-fecha-publicacion');
+                if (fechaPublicacionStr) {
+                    const fechaPublicacion = new Date(fechaPublicacionStr);
+                    const fechaActual = new Date();
+                    const diferenciaTiempo = fechaActual - fechaPublicacion;
+                    const diasTranscurridos = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24));
+                    if (diasTranscurridos > DIAS_LIMITE) { badge.style.display = 'none'; }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

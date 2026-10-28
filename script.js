@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initMascotaHoverEffects();
+    initLeadCaptureForm();
 });
 
 /**
@@ -173,17 +174,30 @@ function scrollToElement(elementId, evt) {
 }
 
 /**
- * Gestión de la suscripción al boletín / captación de correos con Formspree
+ * Inicialización del listener del formulario de captación
+ */
+function initLeadCaptureForm() {
+    const form = document.getElementById('leadCaptureForm');
+    if (form) {
+        form.removeEventListener('submit', handleLeadCapture);
+        form.addEventListener('submit', handleLeadCapture);
+    }
+}
+
+/**
+ * Gestión de la suscripción al boletín / captación de datos con Formspree
  */
 async function handleLeadCapture(evt) {
     if (evt) evt.preventDefault();
-    const emailInput = document.getElementById('leadEmailInput');
+    const form = document.getElementById('leadCaptureForm') || (evt && evt.target);
+    const nameInput = document.querySelector('input[name="name"]') || document.getElementById('leadNameInput');
+    const emailInput = document.querySelector('input[name="email"]') || document.getElementById('leadEmailInput');
     const feedbackEl = document.getElementById('captacionFeedback');
     const btnSubmit = document.getElementById('btnLeadSubmit');
-    const form = document.getElementById('leadCaptureForm');
 
     if (!emailInput || !emailInput.value) return;
 
+    const nameValue = nameInput ? nameInput.value.trim() : '';
     const emailValue = emailInput.value.trim();
     if (!emailValue) return;
 
@@ -197,17 +211,22 @@ async function handleLeadCapture(evt) {
 
     try {
         const endpoint = (form && form.action) ? form.action : 'https://formspree.io/f/mjyybdaj';
+        const payload = { email: emailValue };
+        if (nameValue) {
+            payload.name = nameValue;
+        }
+
         const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: emailValue })
+            body: JSON.stringify(payload)
         });
 
         if (response.ok) {
-            // Confirmación verde de éxito
+            // Confirmación verde de éxito sin recargar la página
             if (btnSubmit) {
                 btnSubmit.innerHTML = '<span>✓ ¡Suscrito con éxito!</span>';
                 btnSubmit.style.background = 'linear-gradient(135deg, #00f0aa 0%, #25d366 100%)';
@@ -217,11 +236,16 @@ async function handleLeadCapture(evt) {
             if (feedbackEl) {
                 feedbackEl.style.display = 'inline-block';
                 feedbackEl.className = 'captacion-feedback captacion-success';
-                feedbackEl.innerHTML = `🎉 <strong>¡Gracias por unirte!</strong> Hemos registrado <em>${emailValue}</em>. Recibirás antes que nadie las novedades del catálogo y recursos gratuitos.`;
+                const saludoNombre = nameValue ? `, ${nameValue}` : '';
+                feedbackEl.innerHTML = `🎉 <strong>¡Gracias por unirte${saludoNombre}!</strong> Hemos registrado tu correo <em>${emailValue}</em>. Recibirás antes que nadie las novedades del catálogo y recursos gratuitos.`;
             }
 
-            if (form) form.reset();
-            else emailInput.value = '';
+            if (form && typeof form.reset === 'function') {
+                form.reset();
+            } else {
+                if (nameInput) nameInput.value = '';
+                if (emailInput) emailInput.value = '';
+            }
 
             setTimeout(() => {
                 if (btnSubmit) {
@@ -235,7 +259,7 @@ async function handleLeadCapture(evt) {
             throw new Error(data.error || 'Respuesta no satisfactoria del servidor');
         }
     } catch (err) {
-        console.error('Error al registrar correo con Formspree:', err);
+        console.error('Error al registrar datos con Formspree:', err);
         if (btnSubmit) {
             btnSubmit.disabled = false;
             btnSubmit.innerHTML = originalBtnContent;
@@ -244,7 +268,7 @@ async function handleLeadCapture(evt) {
         if (feedbackEl) {
             feedbackEl.style.display = 'inline-block';
             feedbackEl.className = 'captacion-feedback captacion-error';
-            feedbackEl.innerHTML = `⚠️ No fue posible registrar tu correo automáticamente. Por favor intenta de nuevo o escríbenos a <a href="mailto:terraciencia0@gmail.com" style="color: #00d2ff; text-decoration: underline;">terraciencia0@gmail.com</a>.`;
+            feedbackEl.innerHTML = `⚠️ No fue posible registrar tu solicitud automáticamente. Por favor intenta de nuevo o escríbenos a <a href="mailto:terraciencia0@gmail.com" style="color: #00d2ff; text-decoration: underline;">terraciencia0@gmail.com</a>.`;
         }
     }
 }

@@ -273,11 +273,11 @@
                 </div>
 
                 <h3 class="expectativa-titulo">
-                    ¡Estamos preparando algo increíble para la inclusión cognitiva!
+                    ¡Estamos preparando algo increíble para el aprendizaje inclusivo!
                 </h3>
 
                 <p class="expectativa-texto-pedagogico">
-                    Muy pronto podrás explorar y acceder a nuestros <strong>Cuadernos de Actividades</strong>, <strong>Guías Pedagógicas</strong>, <strong>Material para el Aula</strong> y <strong>Fichas de Trabajo</strong>. Todos diseñados con secuencias estructuradas y andamiajes visuales permanentes.
+                    Muy pronto podrás explorar y acceder a nuestros <strong>Cuadernos de Actividades</strong>, <strong>Guías Pedagógicas</strong>, <strong>Material Decorativo para el Aula</strong> y <strong>Fichas de Trabajo</strong>. Recursos visuales y prácticos pensados para acompañar el aprendizaje de forma cercana, accesible y motivadora.
                 </p>
 
                 <!-- GRID DE LAS 4 LÍNEAS DE MATERIALES DIDÁCTICOS -->
@@ -298,7 +298,7 @@
 
                     <div class="categoria-preview-card card-decorativo">
                         <div class="categoria-icon">🎨</div>
-                        <h4>Material para el Aula</h4>
+                        <h4>Material Decorativo para el Aula</h4>
                         <p>Láminas, posters e imágenes educativas para ambientar el espacio de trabajo y tener las ideas principales siempre a la vista.</p>
                         <span class="cat-pill">Próximamente</span>
                     </div>
@@ -716,14 +716,18 @@
                 <span class="captacion-badge-pill">COMUNIDAD Y NOVEDADES</span>
                 <h3 class="captacion-titulo">Acompaña el lanzamiento de Terraciencia</h3>
                 <p class="captacion-subtitulo">
-                    Déjanos tu correo para avisarte cuando el catálogo esté disponible y enviarte recursos gratuitos para tu aula o casa.
+                    Déjanos tus datos para avisarte cuando el catálogo esté disponible y enviarte recursos gratuitos para tu aula o casa.
                 </p>
             </div>
 
             <form class="captacion-form" id="leadCaptureForm" action="https://formspree.io/f/mjyybdaj" method="POST" onsubmit="handleLeadCapture(event)">
-                <div class="captacion-input-wrapper">
+                <div class="captacion-input-wrapper name-wrapper">
+                    <span class="captacion-input-icon">👤</span>
+                    <input type="text" id="leadNameInput" name="name" placeholder="Tu nombre..." required class="form-input" autocomplete="name">
+                </div>
+                <div class="captacion-input-wrapper email-wrapper">
                     <span class="captacion-input-icon">✉️</span>
-                    <input type="email" id="leadEmailInput" name="email" class="captacion-input" placeholder="Escribe tu correo electrónico..." required autocomplete="email">
+                    <input type="email" id="leadEmailInput" name="email" placeholder="Escribe tu correo electrónico..." required class="form-input" autocomplete="email">
                 </div>
                 <button type="submit" class="btn-captacion-submit" id="btnLeadSubmit">
                     <span>📩 Recibir Novedades</span>

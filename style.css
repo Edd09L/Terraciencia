@@ -188,8 +188,9 @@ body {
 
 .social-icons-wrapper {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .brand-socials {
@@ -232,6 +233,12 @@ body {
 
 .ig-icon:hover { border-color: #e1306c; box-shadow: 0 0 14px rgba(225, 48, 108, 0.55); }
 .ig-icon:hover svg { fill: #e1306c; }
+
+.tiktok-icon:hover { border-color: #00f2fe; box-shadow: 0 0 14px rgba(0, 242, 254, 0.65), 0 0 8px rgba(254, 44, 85, 0.45); }
+.tiktok-icon:hover svg { fill: #00f2fe; }
+
+.yt-icon:hover { border-color: #ff0000; box-shadow: 0 0 14px rgba(255, 0, 0, 0.6); }
+.yt-icon:hover svg { fill: #ff0000; }
 
 .pin-icon:hover { border-color: #e60023; box-shadow: 0 0 14px rgba(230, 0, 35, 0.55); }
 .pin-icon:hover svg { fill: #e60023; }
@@ -1473,6 +1480,27 @@ body {
     box-shadow: 0 6px 20px rgba(225, 48, 108, 0.5);
 }
 
+.cta-tiktok {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: rgba(0, 242, 254, 0.5);
+}
+.cta-tiktok:hover {
+    background: linear-gradient(135deg, #010101 0%, #161823 45%, #fe2c55 100%);
+    border-color: #00f2fe;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.45), 0 0 15px rgba(254, 44, 85, 0.4);
+}
+
+.cta-youtube {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.55);
+}
+.cta-youtube:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.55);
+}
+
 .cta-pinterest {
     background: rgba(230, 0, 35, 0.2);
     border-color: rgba(230, 0, 35, 0.55);
@@ -2312,7 +2340,8 @@ body {
 
 .footer-social-icons {
     display: flex;
-    gap: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .footer-bottom-bar {
@@ -2437,7 +2466,7 @@ body {
     .nav-link         { font-size: 0.9rem; padding: 6px 14px; }
     .badge-proximamente { font-size: 0.58rem; padding: 2px 7px; margin-left: 5px; }
     .header-right     { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .social-icons-wrapper { margin-left: 0; }
+    .social-icons-wrapper { margin-left: 0; justify-content: center; }
     .logo-texto h1    { font-size: 18px; }
 
     .tarjeta-expectativa-pedagogica { padding: 28px 18px; border-radius: 20px; }
